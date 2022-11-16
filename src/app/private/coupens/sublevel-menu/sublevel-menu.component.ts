@@ -1,12 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { INavbarData } from 'src/app/components/sidenav/helper';
+import { fadeInOut, INavbarData } from 'src/app/components/sidenav/helper';
 import { state, trigger, style, transition, animate } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sublevel-menu',
   templateUrl: './sublevel-menu.component.html',
   styleUrls: ['./sublevel-menu.component.scss'],
   animations: [
+    fadeInOut,
     trigger('submenu', [
       state('hidden', style({
         height: '0',
@@ -34,7 +36,7 @@ export class SublevelMenuComponent implements OnInit {
   @Input() expanded: boolean | undefined;
   @Input() multiple: boolean = false;
   
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     console.log(this.data);
@@ -51,6 +53,10 @@ export class SublevelMenuComponent implements OnInit {
       }
     }
     item.expanded = !item.expanded;
+  }
+
+  getActiveClass(item: INavbarData): string {
+    return item.expanded && this.router.url.includes(item.routeLink) ? 'active-sublevel' : '';
   }
 
 }

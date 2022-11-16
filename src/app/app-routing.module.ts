@@ -11,9 +11,13 @@ import { StatistcsComponent } from './private/statistcs/statistcs.component';
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'products', component: ProductsComponent},
+  {path: 'products', 
+    loadChildren: () => import('./private/products/products.module').then(m => m.ProductsModule)},
   {path: 'statistics', component: StatistcsComponent},
-  {path: 'coupens', component: CoupensComponent},
+  {
+    path: 'coupens', 
+    loadChildren: () => import('./private/coupens/coupens.module').then(m => m.CoupensModule)
+  },
   {path: 'pages', component: PagesComponent},
   {path: 'media', component: MediaComponent},
   {path: 'settings', component: SettingsComponent},
