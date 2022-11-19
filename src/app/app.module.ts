@@ -7,14 +7,16 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { DashboardComponent } from './private/dashboard/dashboard.component';
 import { StatistcsComponent } from './private/statistcs/statistcs.component';
-import { CoupensComponent } from './private/coupens/coupens.component';
 import { PagesComponent } from './private/pages/pages.component';
 import { MediaComponent } from './private/media/media.component';
 import { SettingsComponent } from './private/settings/settings.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { ProductsComponent } from './private/products/products.component';
 import { SublevelMenuComponent } from './private/coupens/sublevel-menu/sublevel-menu.component';
+import { HeaderComponent } from './components/header/header.component';
 
+import { OverlayModule } from '@angular/cdk/overlay';
+import { CdkMenuModule } from '@angular/cdk/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,17 +24,20 @@ import { SublevelMenuComponent } from './private/coupens/sublevel-menu/sublevel-
     SidenavComponent,
     DashboardComponent,
     StatistcsComponent,
-    CoupensComponent,
     PagesComponent,
     MediaComponent,
     SettingsComponent,
     ProductsComponent,
-    SublevelMenuComponent
+    SublevelMenuComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule,
+  
+  BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OverlayModule,
+    CdkMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

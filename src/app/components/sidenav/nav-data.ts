@@ -8,7 +8,7 @@ export const navbarData: INavbarData[] = [
     },
     {
         routeLink: 'products',
-        icon: 'fal fa-box-open',
+        icon: 'fal fa-headphones',
         label: 'Products',
         items: [
             {
@@ -59,8 +59,8 @@ export const navbarData: INavbarData[] = [
     },
     {
         routeLink: 'pages',
-        icon: 'fal fa-file',
-        label: 'Pages'
+        icon: 'fal fa-envelope',
+        label: 'Email'
     },
     {
         routeLink: 'media',
