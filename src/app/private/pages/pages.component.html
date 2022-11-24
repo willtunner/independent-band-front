@@ -3,16 +3,13 @@
 <div class="card">
     <div class="card-head">Email usando spring e thymeleaf</div>
     <div class="card-body">
-        <form [formGroup]="form" #emailForm="ngForm">
+        <!-- <form [formGroup]="form" #emailForm="ngForm">
         <div class="container">
-            
             <label for="ownerRef">Nome</label>
             <input type="text" id="ownerRef" formControlName="ownerRef" autocomplete="off">
             <div *ngIf="this.form.get('name')?.invalid && emailForm.submitted">Preencha o campo nome</div>
             <label for="subject">Titulo</label>
             <input type="text" id="subject" formControlName="subject" autocomplete="off">
-            <label for="emailFrom">Seu email</label>
-            <input type="text" id="emailFrom" formControlName="emailFrom" autocomplete="off">
             <label for="emailTo">Para o email</label>
             <input type="text" id="emailTo" formControlName="emailTo" autocomplete="off">
             <label for="text">Conteudo</label>
@@ -21,6 +18,75 @@
             <button class="button-36" type="submit" (click)="sendEmail()">Enviar</button>
        
         </div>
-    </form>
+    </form> -->
+
+        <form [formGroup]="form" #emailForm="ngForm">
+            <mat-form-field class="example-full-width">
+                <mat-label>Nome</mat-label>
+                <input type="text" matInput formControlName="ownerRef" autocomplete="off"
+                    placeholder="Digite seu nome">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="this.form.get('name')?.invalid && emailForm.submitted">
+                    Preencha o nome
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Nome é <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Titulo</mat-label>
+                <input type="text" matInput formControlName="subject" autocomplete="off" 
+                    placeholder="Digite o titulo">
+                <mat-hint>Erro do titulo aparece aqui</mat-hint>
+                <mat-error *ngIf="this.form.get('subject')?.invalid && emailForm.submitted">
+                    Digite um titulo.
+                </mat-error>
+                <mat-error *ngIf="this.form.get('subject')?.invalid && emailForm.submitted">
+                    Titulo é <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Seu email</mat-label>
+                <input type="email" matInput formControlName="emailFrom" autocomplete="off"
+                    placeholder="Ex. pat@example.com">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="this.form.get('emailFrom')?.invalid && emailForm.submitted">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Para o email</mat-label>
+                <input type="email" matInput formControlName="emailTo" autocomplete="off"
+                    placeholder="Ex. pat@example.com">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="this.form.get('emailTo')?.invalid && emailForm.submitted">
+                    Digite um email válido
+                </mat-error>
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    Para quem é o email é <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Conteudo</mat-label>
+                <input type="text" matInput formControlName="text" autocomplete="off"
+                    placeholder="Conteudo">
+                <mat-hint>Errors appear instantly!</mat-hint>
+                <mat-error *ngIf="this.form.get('text')?.invalid && emailForm.submitted">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="this.form.get('text')?.hasError('required')">
+                    Conteudo é <strong>requerido</strong>
+                </mat-error>
+            </mat-form-field>
+
+            <button class="button-36" type="submit" (click)="sendEmail()" [class.spinner]="loading" [disabled]="loading">{{ loading ? '': 'Enviar'}}</button>
+        </form>
     </div>
 </div>

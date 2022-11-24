@@ -40,7 +40,17 @@ export const navbarData: INavbarData[] = [
     {
         routeLink: 'statistics',
         icon: 'fal fa-chart-bar',
-        label: 'Statistics'
+        label: 'Bandas',
+        items: [
+            {
+                routeLink: "statistics/list",
+                label: 'Procurar bandas'
+            },
+            {
+                routeLink: 'statistics/create',
+                label: 'Cadastrar banda'
+            }
+        ]
     },
     {
         routeLink: 'coupens',
