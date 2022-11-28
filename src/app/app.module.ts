@@ -27,6 +27,12 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatInputModule} from '@angular/material/input';
 import { ListBandsComponent } from './private/statistcs/list-bands/list-bands.component';
 import { CreateBandComponent } from './private/statistcs/create-band/create-band.component';
+import { FloatButtomComponent } from './components/float-buttom/float-buttom.component';
+import { SocialMediaComponent } from './components/social-media/social-media.component';
+import {NgTiltModule} from '@geometricpanda/angular-tilt';
+import { SlideImagesComponent } from './components/slide-images/slide-images.component';
+import { LastReleasesComponent } from './components/last-releases/last-releases.component';
+import { RigthMenuComponent } from './components/rigth-menu/rigth-menu.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +45,11 @@ import { CreateBandComponent } from './private/statistcs/create-band/create-band
     SettingsComponent,
     ProductsComponent,
     SublevelMenuComponent,
-    HeaderComponent
+    HeaderComponent,
+    FloatButtomComponent,
+    SlideImagesComponent,
+    LastReleasesComponent,
+    RigthMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +64,8 @@ import { CreateBandComponent } from './private/statistcs/create-band/create-band
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    MatInputModule
+    MatInputModule,
+    NgTiltModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,7 +38,6 @@
                 <mat-label>Titulo</mat-label>
                 <input type="text" matInput formControlName="subject" autocomplete="off" 
                     placeholder="Digite o titulo">
-                <mat-hint>Erro do titulo aparece aqui</mat-hint>
                 <mat-error *ngIf="this.form.get('subject')?.invalid && emailForm.submitted">
                     Digite um titulo.
                 </mat-error>
@@ -86,7 +85,8 @@
                 </mat-error>
             </mat-form-field>
 
-            <button class="button-36" type="submit" (click)="sendEmail()" [class.spinner]="loading" [disabled]="loading">{{ loading ? '': 'Enviar'}}</button>
+
+            <button class="button-36" type="submit" (click)="sendEmail()" [class.spinner]="loading" [disabled]="emailForm.valid && loading">{{ loading ? '': 'Enviar'}}</button>
         </form>
     </div>
 </div>

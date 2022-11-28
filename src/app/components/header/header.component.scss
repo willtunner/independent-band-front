@@ -142,6 +142,7 @@
 .head-md-screen {
     width: calc(100% - 5rem);
     margin-left: 5rem;
+    min-width: 420px;
 }
 
 @keyframes pulse-animation {
