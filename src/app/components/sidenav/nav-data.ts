@@ -54,8 +54,8 @@ export const navbarData: INavbarData[] = [
     },
     {
         routeLink: 'coupens',
-        icon: 'fal fa-tags',
-        label: 'Coupens',
+        icon: 'fa fa-heart',
+        label: 'Favoritos',
         items: [
             {
                 routeLink: "coupens/list",

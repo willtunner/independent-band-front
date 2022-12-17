@@ -33,6 +33,9 @@ import {NgTiltModule} from '@geometricpanda/angular-tilt';
 import { SlideImagesComponent } from './components/slide-images/slide-images.component';
 import { LastReleasesComponent } from './components/last-releases/last-releases.component';
 import { RigthMenuComponent } from './components/rigth-menu/rigth-menu.component';
+import {MatTableModule} from '@angular/material/table';
+import { MostPopularSongsComponent } from './components/most-popular-songs/most-popular-songs.component';
+import { NoticeMusicsComponent } from './components/notice-musics/notice-musics.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +52,9 @@ import { RigthMenuComponent } from './components/rigth-menu/rigth-menu.component
     FloatButtomComponent,
     SlideImagesComponent,
     LastReleasesComponent,
-    RigthMenuComponent
+    RigthMenuComponent,
+    MostPopularSongsComponent,
+    NoticeMusicsComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +70,8 @@ import { RigthMenuComponent } from './components/rigth-menu/rigth-menu.component
     MatIconModule,
     MatDividerModule,
     MatInputModule,
-    NgTiltModule
+    NgTiltModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
