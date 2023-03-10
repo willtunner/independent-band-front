@@ -8,14 +8,9 @@ import { SettingsComponent } from './private/settings/settings.component';
 const routes: Routes = [
   {path: '', redirectTo: 'dashboard', pathMatch: 'full'},
   {path: 'dashboard', component: DashboardComponent},
-  {path: 'products', 
-    loadChildren: () => import('./private/products/products.module').then(m => m.ProductsModule)},
-  {path: 'statistics',  
-    loadChildren: () => import('./private/statistcs/statistcs.module').then(m => m.StatistcsModule)},
-  {
-    path: 'coupens', 
-    loadChildren: () => import('./private/coupens/coupens.module').then(m => m.CoupensModule)
-  },
+  {path: 'products', loadChildren: () => import('./private/products/products.module').then(m => m.ProductsModule)},
+  {path: 'statistics', loadChildren: () => import('./private/statistcs/statistcs.module').then(m => m.StatistcsModule)},
+  {path: 'coupens', loadChildren: () => import('./private/coupens/coupens.module').then(m => m.CoupensModule)},
   {path: 'pages', component: PagesComponent},
   {path: 'media', component: MediaComponent},
   {path: 'settings', component: SettingsComponent},
