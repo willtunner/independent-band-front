@@ -9,6 +9,6 @@ export class EmailService {
   constructor(private http: HttpClient) { }
 
   sendEmail(email: any) {
-    return this.http.post('http://localhost:8080/sending-email-with-thymeleaf', email).pipe();
+    return this.http.post('http://localhost:8081/sending-email-with-thymeleaf', email).pipe();
   }
 }

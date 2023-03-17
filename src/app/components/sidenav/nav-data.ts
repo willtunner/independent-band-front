@@ -39,16 +39,18 @@ export const navbarData: INavbarData[] = [
     },
     {
         routeLink: 'statistics',
-        icon: 'fal fa-chart-bar',
+        icon: 'fas fa-users',
         label: 'Bandas',
         items: [
             {
                 routeLink: "statistics/list",
-                label: 'Procurar bandas'
+                label: 'Procurar bandas',
+                icon: 'fas fa-users',
             },
             {
                 routeLink: 'statistics/create',
-                label: 'Cadastrar banda'
+                label: 'Cadastrar banda',
+                icon: 'fad fa-users-cog',
             }
         ]
     },

@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Cadastre sua Banda!</h1>
+
+<div mat-dialog-content>
+    <mat-form-field appearance="fill">
+        <mat-label>Input</mat-label>
+        <input matInput>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Select</mat-label>
+        <mat-select>
+          <mat-option value="one">First option</mat-option>
+          <mat-option value="two">Second option</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Textarea</mat-label>
+        <textarea matInput></textarea>
+      </mat-form-field>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" 
+             cdkFocusInitial>Ok</button>
+</div>
