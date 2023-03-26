@@ -1,12 +1,70 @@
-<p>create-band works!</p>
 
-<button mat-raised-button (click)="openDialog()">
-    Pick one
-</button>
+
+<button mat-raised-button (click)="openDialog()">Cria banda</button>
+
+<div class="card" style="width: 700px;" >
+    <div class="card-head">Mais escutadas - Seu estado</div>
+    <div class="card-body">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" style="width: 100%;">
+            <!-- Position Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef> ID </th>
+              <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+            </ng-container>
+
+            <!-- Disc Column -->
+            <ng-container matColumnDef="logo">
+                <th mat-header-cell *matHeaderCellDef> Logo </th>
+                <td mat-cell *matCellDef="let element"> <img [src]="'https://as2.ftcdn.net/v2/jpg/01/77/94/57/1000_F_177945794_Oz3clxxBGWpEnECPyVWc0EumHYL8I8hW.jpg'" style="
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;" alt="disc"> </td>
+            </ng-container>
+
+             <!-- Weight Column -->
+             <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef> Nome </th>
+                <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+              </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="country">
+              <th mat-header-cell *matHeaderCellDef> Pais </th>
+              <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="state">
+              <th mat-header-cell *matHeaderCellDef> Estado </th>
+              <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="city">
+              <th mat-header-cell *matHeaderCellDef> Cidade </th>
+              <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+            </ng-container>
+
+             <!-- Symbol Column -->
+             <ng-container matColumnDef="genre">
+                <th mat-header-cell *matHeaderCellDef> Gênero </th>
+                <td mat-cell *matCellDef="let element"> {{element.genre}} </td>
+              </ng-container>
+
+               <!-- Symbol Column -->
+            <ng-container matColumnDef="created">
+                <th mat-header-cell *matHeaderCellDef> Criado em </th>
+                <td mat-cell *matCellDef="let element"> {{ element.created | date: 'dd/MM/yyyy' }} </td>
+              </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns" style="text-align: center;"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" style="text-align: center;"></tr>
+          </table>
+
+
+    </div>
+</div>
 <br>
-  
-<span *ngIf="animal">
-    You choose: <i>{{animal}}</i>
-<span>
+
 
 

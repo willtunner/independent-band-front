@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 //@import '@angular/cdk/overlay-prebuilt.css';
 
 * {
@@ -22,8 +23,8 @@ body {
     background-color: #fff;
     margin: 1.25rem 0 1.25rem 0;
     box-shadow: 0 .25rem .5rem #e6edef;
-    width: 695px;
-    margin-right: 43px;
+    // width: 695px;
+    // margin-right: 43px;
 
     .card-head {
         padding: 1rem 1.5rem;
@@ -40,6 +41,7 @@ body {
 
         button {
             margin-top: 35px;
+            width: 50%;
         }
     }
 }
@@ -58,7 +60,7 @@ body {
 @keyframes spinner {
     to {transform: rotate(360deg);}
   }
-   
+
   .spinner:before {
     content: "";
     width: 20px;
@@ -70,4 +72,8 @@ body {
     display: flex;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  ::ng-deep .custom-style{
+    color:white;
   }

@@ -1,25 +1,68 @@
-<h1 mat-dialog-title>Cadastre sua Banda!</h1>
+<div class="base">
+  <h1>Cadastre sua banda</h1>
 
-<div mat-dialog-content>
-    <mat-form-field appearance="fill">
-        <mat-label>Input</mat-label>
-        <input matInput>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Select</mat-label>
-        <mat-select>
-          <mat-option value="one">First option</mat-option>
-          <mat-option value="two">Second option</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field appearance="fill">
-        <mat-label>Textarea</mat-label>
-        <textarea matInput></textarea>
-      </mat-form-field>
-</div>
+  <div class="card">
+      <div class="card-head">Compartilhe seu som, cresça!</div>
+      <div class="card-body">
+          <form [formGroup]="form" #bandForm="ngForm">
+              <mat-form-field class="inputForm">
+                  <mat-label>Nome</mat-label>
+                  <input type="text" matInput formControlName="name" autocomplete="off"
+                      placeholder="Digite o nome da sua banda">
+                  <mat-error *ngIf="this.form.get('name')?.invalid && bandForm.submitted">
+                      Preencha o nome
+                  </mat-error>
+              </mat-form-field>
 
-<div mat-dialog-actions>
-  <button mat-button (click)="onCancel()">No Thanks</button>
-  <button mat-button [mat-dialog-close]="data.animal" 
-             cdkFocusInitial>Ok</button>
+              <mat-form-field class="inputForm">
+                  <mat-label>Gênero</mat-label>
+                  <input type="text" matInput formControlName="genre" autocomplete="off"
+                      placeholder="Qual o estilo da sua banda?">
+                  <mat-error *ngIf="this.form.get('genre')?.invalid && bandForm.submitted">
+                      Digite um estilo musical.
+                  </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="inputForm">
+                  <mat-label>Pais de origem da banda</mat-label>
+                  <mat-select formControlName="country" autocomplete="off">
+                    <mat-option value="Brasil">Brasil</mat-option>
+                  </mat-select>
+              </mat-form-field>
+
+              <mat-form-field class="inputForm">
+                  <mat-label>Estado</mat-label>
+                  <mat-select formControlName="state" autocomplete="off">
+                    <mat-option value="one">Selecione o estado</mat-option>
+                    <mat-option *ngFor="let state of states" (click)="getNew(state)" [value]="state.nome">{{ state.nome }}</mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="this.form.get('state')?.invalid && bandForm.submitted">
+                      Digite o estado de origem
+                  </mat-error>
+                  <mat-error *ngIf="this.form.get('text')?.hasError('required')">
+                      Estado é  <strong>obrigatório</strong>
+                  </mat-error>
+              </mat-form-field>
+
+              <mat-form-field class="inputForm">
+                <mat-label>Cidade de origem</mat-label>
+                <mat-select formControlName="city" autocomplete="off">
+                  <mat-option value="one">Selecione a Cidade</mat-option>
+                  <mat-option *ngFor="let city of cities" [value]="city">{{ city }}</mat-option>
+                </mat-select>
+                <mat-error *ngIf="this.form.get('state')?.invalid && bandForm.submitted">
+                    Digite a cidade de origem
+                </mat-error>
+                <mat-error *ngIf="this.form.get('text')?.hasError('required')">
+                    Cidade é  <strong>obrigatório</strong>
+                </mat-error>
+            </mat-form-field>
+
+
+              <button class="button-36" type="submit" (click)="saveBand()" [class.spinner]="loading" [disabled]="form.valid && loading">{{ loading ? '': 'Enviar'}}</button>
+
+          </form>
+      </div>
+  </div>
+
 </div>

@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  api_band: 'http://localhost:8081/band'
+  api_url: 'http://localhost:8081/'
 };
 
 /*

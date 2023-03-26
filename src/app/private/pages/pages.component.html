@@ -3,22 +3,6 @@
 <div class="card">
     <div class="card-head">Email usando spring e thymeleaf</div>
     <div class="card-body">
-        <!-- <form [formGroup]="form" #emailForm="ngForm">
-        <div class="container">
-            <label for="ownerRef">Nome</label>
-            <input type="text" id="ownerRef" formControlName="ownerRef" autocomplete="off">
-            <div *ngIf="this.form.get('name')?.invalid && emailForm.submitted">Preencha o campo nome</div>
-            <label for="subject">Titulo</label>
-            <input type="text" id="subject" formControlName="subject" autocomplete="off">
-            <label for="emailTo">Para o email</label>
-            <input type="text" id="emailTo" formControlName="emailTo" autocomplete="off">
-            <label for="text">Conteudo</label>
-            <input type="text" id="text" formControlName="text" autocomplete="off">
-
-            <button class="button-36" type="submit" (click)="sendEmail()">Enviar</button>
-       
-        </div>
-    </form> -->
 
         <form [formGroup]="form" #emailForm="ngForm">
             <mat-form-field class="example-full-width">

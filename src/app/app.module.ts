@@ -21,21 +21,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgImageSliderModule } from 'ng-image-slider';
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatInputModule} from '@angular/material/input';
-import { ListBandsComponent } from './private/statistcs/list-bands/list-bands.component';
-import { CreateBandComponent } from './private/statistcs/create-band/create-band.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatInputModule } from '@angular/material/input';
 import { FloatButtomComponent } from './components/float-buttom/float-buttom.component';
-import { SocialMediaComponent } from './components/social-media/social-media.component';
-import {NgTiltModule} from '@geometricpanda/angular-tilt';
+import { NgTiltModule } from '@geometricpanda/angular-tilt';
 import { SlideImagesComponent } from './components/slide-images/slide-images.component';
 import { LastReleasesComponent } from './components/last-releases/last-releases.component';
 import { RigthMenuComponent } from './components/rigth-menu/rigth-menu.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MostPopularSongsComponent } from './components/most-popular-songs/most-popular-songs.component';
 import { NoticeMusicsComponent } from './components/notice-musics/notice-musics.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { ToastbarComponent } from './components/toastbar/toastbar.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -54,7 +54,8 @@ import { NoticeMusicsComponent } from './components/notice-musics/notice-musics.
     LastReleasesComponent,
     RigthMenuComponent,
     MostPopularSongsComponent,
-    NoticeMusicsComponent
+    NoticeMusicsComponent,
+    ToastbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,7 +72,9 @@ import { NoticeMusicsComponent } from './components/notice-musics/notice-musics.
     MatDividerModule,
     MatInputModule,
     NgTiltModule,
-    MatTableModule
+    MatTableModule,
+    MatSnackBarModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]
