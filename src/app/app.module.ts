@@ -36,6 +36,9 @@ import { NoticeMusicsComponent } from './components/notice-musics/notice-musics.
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { ToastbarComponent } from './components/toastbar/toastbar.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { BandComponent } from './private/band/band.component';
+import { MatExpansionModule } from '@angular/material/expansion';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MostPopularSongsComponent,
     NoticeMusicsComponent,
     ToastbarComponent,
+    BandComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     NgTiltModule,
     MatTableModule,
     MatSnackBarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatExpansionModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

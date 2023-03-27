@@ -1,8 +1,7 @@
-import {Injectable} from '@angular/core';
 import { Gender } from '../enum/gender.enum';
 
 export interface User {
-    id?: number;
+    id: number;
     name: string;
     gender: Gender
     password: string;
@@ -11,10 +10,11 @@ export interface User {
     created: string;
     deleted: boolean;
     age: string;
+    image: string;
 }
 
 export interface Band {
-    id?: number;
+    id: number;
     name: string;
     state: string;
     country: string;
@@ -24,29 +24,33 @@ export interface Band {
     created: string;
     deleted?: boolean;
     logo: string;
+    members: User[];
 }
 
 export interface Music {
-    id?: number;
+    id: number;
     nameMusic: string;
     duration: string;
     description: string;
-    likes: number;
+    like: number;
     dislike: number;
     auditions: number;
     discId: number;
+    favorite: number;
 }
 
 export interface Disc {
-    id?: number;
+    id: number;
     name: string;
     description: string;
     release: string;
     likes: number;
     dislike: number;
     members?:User[];
+    musics: Music[];
     bandId: number;
     band: Band;
+    image: string;
 }
 
 export interface Followers {

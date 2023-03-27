@@ -24,6 +24,15 @@
               </mat-form-field>
 
               <mat-form-field class="inputForm">
+                <mat-label>Logo</mat-label>
+                <input type="text" matInput formControlName="logo" autocomplete="off"
+                    placeholder="Defina a logo da sua banda">
+                <mat-error *ngIf="this.form.get('logo')?.invalid && bandForm.submitted">
+                    Coloque um link URL da sua Banda!
+                </mat-error>
+            </mat-form-field>
+
+              <mat-form-field class="inputForm">
                   <mat-label>Pais de origem da banda</mat-label>
                   <mat-select formControlName="country" autocomplete="off">
                     <mat-option value="Brasil">Brasil</mat-option>
@@ -59,7 +68,7 @@
             </mat-form-field>
 
 
-              <button class="button-36" type="submit" (click)="saveBand()" [class.spinner]="loading" [disabled]="form.valid && loading">{{ loading ? '': 'Enviar'}}</button>
+              <button class="button-36" type="submit" (click)="saveBand()" [class.spinner]="loading" [disabled]="form.valid && loading">{{ loading ? '': 'Salvar'}}</button>
 
           </form>
       </div>

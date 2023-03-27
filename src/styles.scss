@@ -24,7 +24,7 @@ body {
     margin: 1.25rem 0 1.25rem 0;
     box-shadow: 0 .25rem .5rem #e6edef;
     // width: 695px;
-    // margin-right: 43px;
+    margin-right: 43px;
 
     .card-head {
         padding: 1rem 1.5rem;
@@ -74,6 +74,10 @@ body {
     margin-right: auto;
   }
 
-  ::ng-deep .custom-style{
+  ::ng-deep .custom-style {
     color:white;
   }
+
+  mat-dialog-container {
+    padding: 0px !important;
+ }

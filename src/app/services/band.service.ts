@@ -18,4 +18,6 @@ export class BandService {
   getAllBands() {
     return this.http.get(`${ environment.api_url + this.baseUrl }`);
   }
+
+ 
 }

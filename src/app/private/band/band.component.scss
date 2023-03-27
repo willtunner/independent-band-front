@@ -1,0 +1,49 @@
+.header {
+  width: 100%;
+  height: 165px;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 110px;
+  box-shadow: 0 0.25rem 1.3rem #0c0c0c;
+
+}
+
+.logo img{
+  width: 140px;
+  border-radius: 10%;
+}
+
+.info {
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: -30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.members {
+  display: flex;
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.member {
+  display: flex;
+  margin-bottom: -70px;
+  margin-right: 15px;
+  justify-content: center;
+}
+
+.body {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+// .mat-mdc-form-field + .mat-mdc-form-field {
+//   margin-left: 8px;
+// }
+

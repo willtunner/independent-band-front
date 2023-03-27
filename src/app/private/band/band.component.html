@@ -1,0 +1,63 @@
+<div class="header">
+  <div class="logo">
+    <img [src]="band.logo">
+  </div>
+  <div class="info">
+   <div>
+    <h2 style="text-align: center;margin-top: -50px;margin-bottom: 5px;"> {{ band.name }}</h2>
+    <div style="display: flex;font-size: 11px;">
+      <p style="margin-right: 3px;">Gênero: <b style="margin-right: 3px;">{{ band.genre }}</b></p>
+      <p style="margin-right: 3px;">Pais: <b style="margin-right: 3px;">{{ band.country }}</b></p>
+      <p style="margin-right: 3px;">Estado: <b style="margin-right: 3px;">{{ band.state }}</b></p>
+      <p>Cidade: <b>{{ band.city }}</b></p>
+    </div>
+   </div>
+
+   <div class="members">
+    <div class="member" *ngFor="let member of members">
+      <div>
+        <img [src]="member.image" style="width: 60px;height: 70px;">
+        <p style="font-size: 10px;color: white;text-align: center;">{{ member.name }}</p>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
+
+<div class="body">
+  <h2 style="margin-left: 15px;margin-bottom: 10px;">Discos</h2>
+  <mat-accordion>
+    <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"*ngFor="let disc of discs">
+      <mat-expansion-panel-header style="height: 60px;" >
+        <mat-panel-title>
+          <img [src]="disc.image" style="width: 50px;border-radius: 5px;">
+        </mat-panel-title>
+        <mat-panel-description>
+          <b>{{ disc.name }}</b>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!--? Lista de musicas aqui  -->
+      <mat-list>
+        <mat-list-item *ngFor="let music of disc.musics">
+          <mat-icon style="cursor: pointer;">play_circle_filled</mat-icon>
+          <div matListItemTitle style="margin-left: 20px;margin-right: 20px;"><b>{{ music.nameMusic }} </b></div>
+          <span> -  </span>
+          <i class="far fa-stopwatch" style="margin-left: 20px;margin-right: 5px;"></i>
+          <div matListItemLine style="margin-right: 20px;"> {{ music.duration }} </div>
+          <span> - </span>
+          <i [ngClass]="this.like == true ? 'fas fa-thumbs-up' : 'fal fa-thumbs-up' " style="margin-left: 20px;margin-right: 5px;cursor: pointer;" (click)="changeLike()"></i> <span style="margin-right: 20px;">{{ music.like }}</span>
+          <span> - </span>
+          <i class="fas fa-file-alt" style="margin-left: 20px;margin-right: 20px;cursor: pointer;"></i>
+          <span> - </span>
+          <i class="fas fa-headphones" style="margin-left: 20px;margin-right: 5px;"></i> <span style="margin-right: 20px;">{{ music.auditions }}</span>
+          <span> - </span>
+          <i [ngClass]="this.like == true ? 'fas fa-heart' : 'far fa-heart' " style="margin-left: 20px;margin-right: 5px;cursor: pointer;" (click)="changeLike()"></i>
+          <mat-divider></mat-divider>
+        </mat-list-item>
+
+      </mat-list>
+
+    </mat-expansion-panel>
+
+  </mat-accordion>
+</div>
