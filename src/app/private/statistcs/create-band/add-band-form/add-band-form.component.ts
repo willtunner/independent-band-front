@@ -44,7 +44,6 @@ export class AddBandFormComponent implements OnInit {
       country: new FormControl(null, [Validators.required] ),
       city: new FormControl(null, [Validators.required]),
       state: new FormControl(null, Validators.required),
-      logo: new FormControl(null, Validators.required),
       creatorId: new FormControl(1),
     })
   }

@@ -14,6 +14,7 @@
                   </mat-error>
               </mat-form-field>
 
+
               <mat-form-field class="inputForm">
                   <mat-label>Gênero</mat-label>
                   <input type="text" matInput formControlName="genre" autocomplete="off"
@@ -23,14 +24,6 @@
                   </mat-error>
               </mat-form-field>
 
-              <mat-form-field class="inputForm">
-                <mat-label>Logo</mat-label>
-                <input type="text" matInput formControlName="logo" autocomplete="off"
-                    placeholder="Defina a logo da sua banda">
-                <mat-error *ngIf="this.form.get('logo')?.invalid && bandForm.submitted">
-                    Coloque um link URL da sua Banda!
-                </mat-error>
-            </mat-form-field>
 
               <mat-form-field class="inputForm">
                   <mat-label>Pais de origem da banda</mat-label>

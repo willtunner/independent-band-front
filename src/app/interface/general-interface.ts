@@ -10,7 +10,7 @@ export interface User {
     created: string;
     deleted: boolean;
     age: string;
-    image: string;
+    urlImageProfile: string;
 }
 
 export interface Band {
@@ -23,7 +23,7 @@ export interface Band {
     creatorId?: number;
     created: string;
     deleted?: boolean;
-    logo: string;
+    image: string;
     members: User[];
 }
 

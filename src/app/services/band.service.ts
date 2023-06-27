@@ -19,5 +19,9 @@ export class BandService {
     return this.http.get(`${ environment.api_url + this.baseUrl }`);
   }
 
- 
+  getBandLogoImage(idBand: number) {
+        return this.http.get(`${ environment.api_url + this.baseUrl + `/${idBand}/logo`}`);
+  }
+
+
 }

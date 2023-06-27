@@ -1,6 +1,7 @@
 <div class="header">
   <div class="logo">
-    <img [src]="band.logo">
+    <!-- <img [src]="band.logo"> -->
+    <img [src]="band.image">
   </div>
   <div class="info">
    <div>
@@ -16,7 +17,8 @@
    <div class="members">
     <div class="member" *ngFor="let member of members">
       <div>
-        <img [src]="member.image" style="width: 60px;height: 70px;">
+        <!-- <img [src]="member.image" style="width: 60px;height: 70px;"> -->
+        <img [src]="member.urlImageProfile" style="width: 80px;height: 80px;">
         <p style="font-size: 10px;color: white;text-align: center;">{{ member.name }}</p>
       </div>
     </div>
@@ -30,7 +32,8 @@
     <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false"*ngFor="let disc of discs">
       <mat-expansion-panel-header style="height: 60px;" >
         <mat-panel-title>
-          <img [src]="disc.image" style="width: 50px;border-radius: 5px;">
+          <!-- <img [src]="disc.image" style="width: 50px;border-radius: 5px;"> -->
+          <img src="http://localhost:8081/band/band-logo/Crashdown.jpg" style="width: 50px;border-radius: 5px;">
         </mat-panel-title>
         <mat-panel-description>
           <b>{{ disc.name }}</b>

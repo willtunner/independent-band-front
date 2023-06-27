@@ -12,8 +12,9 @@ import { AddBandFormComponent } from './add-band-form/add-band-form.component';
 })
 
 export class CreateBandComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'logo', 'name', 'country', 'state', 'city', 'genre', 'created'];
+  displayedColumns: string[] = ['id','play', 'logo', 'name', 'country', 'state', 'city', 'genre', 'created'];
   dataSource = [];
+  bandsWhithLogo = [];
   bands = null;
 
   constructor(public dialog: MatDialog, private bandService: BandService) { }
@@ -26,8 +27,15 @@ export class CreateBandComponent implements OnInit {
     this.bandService.getAllBands().subscribe((res: any) => {
       console.log('Bandas',res.data.bands);
       this.dataSource = res.data.bands;
+
     })
   }
+
+  // getLogoImageBand(bands: any) {
+  //   bands.array.forEach( (element: object[]) => {
+  //     console.log(`Elemento: `,element);
+  //   });
+  //}
 
   openDialog(): void {
     let dialogRef = this.dialog.open(AddBandFormComponent, {
@@ -41,7 +49,7 @@ export class CreateBandComponent implements OnInit {
   }
 
   getBand(res: any) {
-     console.log('res ', res);
+     console.log('Band ', res);
     let dialogRef = this.dialog.open(BandComponent, {
       width: '835px',
       height: 'auto',
@@ -52,5 +60,9 @@ export class CreateBandComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       // this.animal = result;
     });
+  }
+
+  getUrlLogo(idBand: any) {
+    return this.bandService.getBandLogoImage(idBand).subscribe( res => console.log(res));
   }
 }

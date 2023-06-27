@@ -39,6 +39,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { BandComponent } from './private/band/band.component';
 import { MatExpansionModule } from '@angular/material/expansion';
 import {MatListModule} from '@angular/material/list';
+import { LoginComponent } from './public/login/login.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import {MatListModule} from '@angular/material/list';
     NoticeMusicsComponent,
     ToastbarComponent,
     BandComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

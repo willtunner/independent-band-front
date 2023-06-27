@@ -49,7 +49,7 @@ export const navbarData: INavbarData[] = [
             },
             {
                 routeLink: 'statistics/create',
-                label: 'Cadastrar banda',
+                label: 'Criar banda',
                 icon: 'fad fa-users-cog',
             }
         ]
